@@ -4,7 +4,7 @@ import NavBar from "../nav/NavBar"
 
 const Container = ({ children }) => {
   return (
-    <div className="font-Maven">
+    <div className=" w-full min-h-screen font-Maven">
       <NavBar />
 
       {children}

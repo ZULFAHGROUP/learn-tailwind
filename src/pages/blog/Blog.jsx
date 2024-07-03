@@ -1,12 +1,13 @@
 import Container from "../../components/container/Container"
-import Card from "./Card"
 
-const Landing = () => {
+const Blog = () => {
   return (
     <Container>
-      <Card />
+      
+      fgfgfgf
+   
     </Container>
   )
 }
 
-export default Landing
+export default Blog
