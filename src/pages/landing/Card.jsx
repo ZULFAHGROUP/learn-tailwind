@@ -1,7 +1,11 @@
 import { RiInformationFill } from "react-icons/ri"
 import Button from "../../shared/button/Button"
+import { useDarkMode } from "../../components/context/ContextTwo"
 
 const Card = () => {
+
+  const {darkMode} = useDarkMode()
+
   return (
     <div className="bg-[#cce1db] rounded-[0.5rem] w-[25rem]  p-[0.8rem] ">
       <div className=" space-y-3 hover:scale-[1.025]">
@@ -11,7 +15,7 @@ const Card = () => {
             alt=""
           />
         </div>
-        <div className="bg-white rounded-t-[0.5rem] space-y-4 rounded-b-[0.8rem] py-[1rem]   px-[0.8rem] ">
+        <div className={ ` ${darkMode? "bg-gray-700 ": "bg-white"}  rounded-t-[0.5rem] space-y-4 rounded-b-[0.8rem] py-[1rem]   px-[0.8rem] `}>
           <h1 className="font-semibold text-[1.5rem] ">TREELZ</h1>
           <p>
             Digital entertainment hub for subscribers on the 9Mobile network

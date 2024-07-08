@@ -4,9 +4,14 @@ import { RxHamburgerMenu } from "react-icons/rx"
 import { IoCloseCircleSharp } from "react-icons/io5"
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import { blogPathName, businessPathName } from "../../data/pathName"
+import { blogPathName, businessPathName, digitalServicePathName } from "../../data/pathName"
+import { useDarkMode } from "../context/ContextTwo"
+import { AiOutlineMoon } from "react-icons/ai";
+import { IoIosSunny } from "react-icons/io";
 
 const NavBar = () => {
+  const { handleDarkMode, darkMode } = useDarkMode()
+
   const [toggle, setToggle] = useState(true)
 
   const navDatas = [
@@ -24,15 +29,19 @@ const NavBar = () => {
     },
     {
       label: "Digital Services",
-      path: "/digital/services",
+      path: `/${digitalServicePathName}`,
     },
     {
       label: "Blog",
       path: `/${blogPathName}`,
     },
     {
-      label: "Get Help",
-      path: "/get/help",
+      label: "Component One",
+      path: "/compOne",
+    },
+    {
+      label: "Component Two",
+      path: "/compTwo",
     },
   ]
   function handleToggle() {
@@ -40,7 +49,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="flex  bg-white justify-between items-center px-[1rem] z-50 lg:px-[5rem] py-[1rem] w-full flex-wrap sm:flex-nowrap   ">
+    <nav className="flex  justify-between items-center px-[1rem] z-50 lg:px-[5rem] py-[1rem] w-full flex-wrap sm:flex-nowrap   ">
       <div className="w-[7%] ">
         <Link to="/">
           <img src={logo} alt="logo" className="w-[2.5rem] " />
@@ -73,7 +82,11 @@ const NavBar = () => {
             </NavLink>
           ))}
         </ul>
+        
       </div>
+      <div onClick={handleDarkMode} className="cursor-pointer px-3 text-[1.5rem] ">
+          {darkMode ? <IoIosSunny/> : <AiOutlineMoon/>}
+        </div>
     </nav>
   )
 }

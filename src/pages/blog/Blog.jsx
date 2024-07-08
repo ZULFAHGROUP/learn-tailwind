@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <Container>
       
-      fgfgfgf
+      BLOG
    
     </Container>
   )
